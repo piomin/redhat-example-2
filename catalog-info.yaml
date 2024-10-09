@@ -1,0 +1,25 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: redhat-example-2
+  title: redhat-example-2
+  annotations:
+    janus-idp.io/tekton: redhat-example-2
+    tektonci/build-namespace: demo
+    github.com/project-slug: piomin/redhat-example-2
+    sonarqube.org/project-key: piomin_redhat-example-2
+    backstage.io/kubernetes-id: redhat-example-2
+    argocd/app-name: redhat-example-2
+    prometheus.io/rule: container_memory_usage_bytes{pod=~"redhat-example-2-.*"}|pod,rate(container_cpu_usage_seconds_total{pod=~"redhat-example-2-.*"}[5m])|pod
+  tags:
+    - spring-boot
+    - java
+    - maven
+    - tekton
+    - argocd
+    - renovate
+    - sonarqube
+spec:
+  type: service
+  owner: piomin
+  lifecycle: experimental
